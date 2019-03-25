@@ -5,7 +5,7 @@
     <th>Mass</th>
     <th>Hair color</th>
     <th>Skin color</th>
-    <th>Eyes color</th>
+    <th>Eye color</th>
     <th>Birth year</th>
     <th>Gender</th>
     <th>Homeworld</th>
@@ -21,7 +21,7 @@
         <td><%= p["mass"] %></td>
         <td><%= p["hair_color"] %></td>
         <td><%= p["skin_color"] %></td>
-        <td><%= p["eyes_color"] %></td>
+        <td><%= p["eye_color"] %></td>
         <td><%= p["birth_year"] %></td>
         <td><%= p["gender"] %></td>
         <td><%= p["homeworld"] %></td>
@@ -33,3 +33,10 @@
 </table>
 
 </table>
+
+<p></p>
+
+<%= link_to 'FILMS', film_path, :class => "btn btn-default" %>
+<%= link_to 'PEOPLE', people_path, :class => "btn btn-default" %>
+<%= link_to 'PLANETS', planet_path, :class => "btn btn-default" %>
+<%= link_to 'STARSHIPS', starship_path, :class => "btn btn-default" %>

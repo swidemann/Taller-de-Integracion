@@ -10,7 +10,7 @@
   <tbody>
     <% @films.each do |f| %>
       <tr>
-        <td><%= link_to f["name"], film_specific_path(url: f["url"])%></td>
+        <td><%= link_to f["title"], film_specific_path(url: f["url"])%></td>
         <td><%= f["release_date"] %></td>
         <td><%= f["director"] %></td>
         <td><%= f["producer"] %></td>
@@ -19,5 +19,11 @@
     <% end %>
   </tbody>
 </table>
-
 </table>
+
+<p></p>
+
+<%= link_to 'FILMS', film_path, :class => "btn btn-default" %>
+<%= link_to 'PEOPLE', people_path, :class => "btn btn-default" %>
+<%= link_to 'PLANETS', planet_path, :class => "btn btn-default" %>
+<%= link_to 'STARSHIPS', starship_path, :class => "btn btn-default" %>

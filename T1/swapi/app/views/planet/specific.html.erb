@@ -1,16 +1,23 @@
 <table>
   <tbody>
-      <td>Name: <%= @planet["name"] %></td>
-      <td>Rotation period: <%= @planet["rotation_period"] %></td>
-      <td>Orbital period: <%= @planet["orbital_period"] %></td>
-      <td>Diameter: <%= @planet["diameter"] %></td>
-      <td>Climate: <%= @planet["climate"] %></td>
-      <td>Gravity: <%= @planet["gravity"] %></td>
-      <td>Terrain: <%= @planet["terrain"] %></td>
-      <td>Surface water: <%= @planet["surface_water"] %></td>
-      <td>Population: <%= @planet["population"] %></td>
-      <td>Residents: <%= @planet["residents"] %></td>
-      <td>Films: <%= @planet["films"] %></td>
+      <p>Name: <%= @planet["name"] %></p>
+      <p>Rotation period: <%= @planet["rotation_period"] %></p>
+      <p>Orbital period: <%= @planet["orbital_period"] %></p>
+      <p>Diameter: <%= @planet["diameter"] %></p>
+      <p>Climate: <%= @planet["climate"] %></p>
+      <p>Gravity: <%= @planet["gravity"] %></p>
+      <p>Terrain: <%= @planet["terrain"] %></p>
+      <p>Surface water: <%= @planet["surface_water"] %></p>
+      <p>Population: <%= @planet["population"] %></p>
+      <p>Residents: <%= @planet["residents"] %></p>
+      <p>Films: <%= @planet["films"] %></p>
 </tbody>
 
 </table>
+
+<p></p>
+
+<%= link_to 'FILMS', film_path, :class => "btn btn-default" %>
+<%= link_to 'PEOPLE', people_path, :class => "btn btn-default" %>
+<%= link_to 'PLANETS', planet_path, :class => "btn btn-default" %>
+<%= link_to 'STARSHIPS', starship_path, :class => "btn btn-default" %>

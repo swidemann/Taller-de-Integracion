@@ -1,0 +1,17 @@
+<table>  
+  <tbody>
+    <p>Title: <%= @film["title"] %></p>
+    <p>Episode id: <%= @film["episode_id"] %></p>
+    <p>Opening crawl: <%= @film["opening_crawl"] %></p>
+    <p>Director: <%= @film["director"] %></p>
+    <p>Producer: <%= @film["producer"] %></p>
+    <p>Release date: <%= @film["release_date"] %></p>
+  </tbody>
+</table>
+
+<p></p>
+
+<%= link_to 'FILMS', film_path, :class => "btn btn-default" %>
+<%= link_to 'PEOPLE', people_path, :class => "btn btn-default" %>
+<%= link_to 'PLANETS', planet_path, :class => "btn btn-default" %>
+<%= link_to 'STARSHIPS', starship_path, :class => "btn btn-default" %>

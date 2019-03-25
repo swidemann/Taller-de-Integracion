@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
             person["mass"] = r["mass"]
             person["hair_color"] = r["hair_color"]
             person["skin_color"] = r["skin_color"]
-            person["eyes_color"] = r["eyes_color"]
+            person["eye_color"] = r["eye_color"]
             person["birth_year"] = r["birth_year"]
             person["gender"] = r["gender"]
             person["homeworld"] = r["homeworld"]

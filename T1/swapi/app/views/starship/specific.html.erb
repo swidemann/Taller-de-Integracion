@@ -1,3 +1,4 @@
+<table>  
   <tbody>
     <p>Name: <%= @starship["name"] %></p>
     <p>Model: <%= @starship["model"] %></p>
@@ -14,4 +15,12 @@
     <p>Starship class:<%= @starship["starship_class"] %></p>
     <p>Pilots: <%= @starship["pilots"] %></p>
     <p>Films: <%= @starship["films"] %></p>
-</tbody>
+  </tbody>
+</table>
+
+<p></p>
+
+<%= link_to 'FILMS', film_path, :class => "btn btn-default" %>
+<%= link_to 'PEOPLE', people_path, :class => "btn btn-default" %>
+<%= link_to 'PLANETS', planet_path, :class => "btn btn-default" %>
+<%= link_to 'STARSHIPS', starship_path, :class => "btn btn-default" %>
