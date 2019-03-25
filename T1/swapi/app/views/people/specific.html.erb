@@ -11,11 +11,11 @@
     <p>Homeworld: <%= link_to @person["homeworld"]["name"], planet_specific_path(url: @person["homeworld"]["url"])%></p>
     <p>Films:</p>
     <% @person["films"].each do |person| %>
-      <p><%= link_to person["title"], film_specific_path(url: person["url"])%></p>
+      <li><%= link_to person["title"], film_specific_path(url: person["url"])%></li>
     <% end %>
     <p>Starships:</p>
     <% @person["starships"].each do |person| %>
-      <p><%= link_to person["name"], starship_specific_path(url: person["url"])%></p>
+      <li><%= link_to person["name"], starship_specific_path(url: person["url"])%></li>
     <% end %>
   </tbody>
 </table>

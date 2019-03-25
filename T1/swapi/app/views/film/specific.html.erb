@@ -8,15 +8,15 @@
     <p>Release date: <%= @film["release_date"] %></p>
     <p>Caracters:</p>
     <% @film["characters"].each do |person| %>
-      <p><%= link_to person["name"], people_specific_path(url: person["url"])%></p>
+      <li><%= link_to person["name"], people_specific_path(url: person["url"])%></li>
     <% end %>
     <p>Planets:</p>
     <% @film["planets"].each do |person| %>
-      <p><%= link_to person["name"], planet_specific_path(url: person["url"])%></p>
+      <li><%= link_to person["name"], planet_specific_path(url: person["url"])%></li>
     <% end %>
     <p>Starships:</p>
     <% @film["starships"].each do |person| %>
-      <p><%= link_to person["name"], starship_specific_path(url: person["url"])%></p>
+      <li><%= link_to person["name"], starship_specific_path(url: person["url"])%></li>
     <% end %>
   </tbody>
 </table>

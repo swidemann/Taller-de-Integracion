@@ -11,11 +11,11 @@
       <p>Population: <%= @planet["population"] %></p>
       <p>Residents:</p>
       <% @planet["residents"].each do |person| %>
-        <p><%= link_to person["name"], people_specific_path(url: person["url"])%></p>
+        <li><%= link_to person["name"], people_specific_path(url: person["url"])%></li>
       <% end %>
       <p>Films:</p>
       <% @planet["films"].each do |person| %>
-        <p><%= link_to person["title"], film_specific_path(url: person["url"])%></p>
+        <li><%= link_to person["title"], film_specific_path(url: person["url"])%></li>
       <% end %>
 </tbody>
 
