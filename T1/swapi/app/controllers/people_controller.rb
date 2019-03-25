@@ -44,9 +44,28 @@ class PeopleController < ApplicationController
       @person["eye_color"] = response["eye_color"] 
       @person["birth_year"] = response["birth_year"] 
       @person["gender"] = response["gender"] 
-      @person["homeworld"] = response["homeworld"] 
-      @person["films"] = response["films"] 
-      @person["starships"] = response["starships"] 
+      homeworld = Hash.new
+      homeworld["name"] = (HTTParty.get(response["homeworld"]))["name"]
+      homeworld["url"] = response["homeworld"] 
+      @person["homeworld"] = homeworld
+      films_urls = response["films"]
+      films = []
+      films_urls.each do |url|
+        char = Hash.new
+        char["title"] = (HTTParty.get(url))["title"]
+        char["url"] = url
+        films.push(char)
+      end
+      @person["films"] = films
+      starships_urls = response["starships"]
+      starships = []
+      starships_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        starships.push(char)
+      end
+      @person["starships"] = starships 
       @person["url"] = response["url"] 
       @person
     end

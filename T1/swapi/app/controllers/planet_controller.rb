@@ -45,7 +45,24 @@ class PlanetController < ApplicationController
       @planet["surface_water"] = response["surface_water"] 
       @planet["population"] = response["population"] 
       @planet["residents"] = response["residents"] 
-      @planet["films"] = response["films"]
+      residents_urls = response["residents"]
+      residents = []
+      residents_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        residents.push(char)
+      end
+      @planet["residents"] = residents
+      films_urls = response["films"]
+      films = []
+      films_urls.each do |url|
+        char = Hash.new
+        char["title"] = (HTTParty.get(url))["title"]
+        char["url"] = url
+        films.push(char)
+      end
+      @planet["films"] = films
       @planet["url"] = response["url"]
       @planet
     end

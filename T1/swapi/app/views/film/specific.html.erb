@@ -6,9 +6,18 @@
     <p>Director: <%= @film["director"] %></p>
     <p>Producer: <%= @film["producer"] %></p>
     <p>Release date: <%= @film["release_date"] %></p>
-    <p>Caracters: <%= @film["characters"] %></p>
-    <p>Planets: <%= @film["planets"] %></p>
-    <p>Starships: <%= @film["starships"] %></p>
+    <p>Caracters:</p>
+    <% @film["characters"].each do |person| %>
+      <p><%= link_to person["name"], people_specific_path(url: person["url"])%></p>
+    <% end %>
+    <p>Planets:</p>
+    <% @film["planets"].each do |person| %>
+      <p><%= link_to person["name"], planet_specific_path(url: person["url"])%></p>
+    <% end %>
+    <p>Starships:</p>
+    <% @film["starships"].each do |person| %>
+      <p><%= link_to person["name"], starship_specific_path(url: person["url"])%></p>
+    <% end %>
   </tbody>
 </table>
 

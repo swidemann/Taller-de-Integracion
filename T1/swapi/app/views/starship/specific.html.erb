@@ -13,8 +13,14 @@
     <p>Hyperdrive rating<%= @starship["hyperdrive_rating"] %></p>
     <p>MGLT: <%= @starship["MGLT"] %></p>
     <p>Starship class:<%= @starship["starship_class"] %></p>
-    <p>Pilots: <%= @starship["pilots"] %></p>
-    <p>Films: <%= @starship["films"] %></p>
+    <p>Pilots:</p>
+    <% @starship["pilots"].each do |person| %>
+      <p><%= link_to person["name"], people_specific_path(url: person["url"])%></p>
+    <% end %>
+    <p>Films:</p>
+    <% @starship["films"].each do |person| %>
+      <p><%= link_to person["title"], film_specific_path(url: person["url"])%></p>
+    <% end %>
   </tbody>
 </table>
 

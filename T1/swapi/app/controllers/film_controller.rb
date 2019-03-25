@@ -37,9 +37,33 @@ class FilmController < ApplicationController
       @film["director"] = response["director"] 
       @film["producer"] = response["producer"] 
       @film["release_date"] = response["release_date"] 
-      @film["characters"] = response["characters"] 
-      @film["planets"] = response["planets"] 
-      @film["starships"] = response["starships"] 
+      char_urls = response["characters"]
+      characters = []
+      char_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        characters.push(char)
+      end
+      @film["characters"] = characters
+      planets_urls = response["planets"]
+      planets = []
+      planets_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        planets.push(char)
+      end
+      @film["planets"] = planets
+      starships_urls = response["starships"]
+      starships = []
+      starships_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        starships.push(char)
+      end
+      @film["starships"] = starships
       @film["url"] = response["url"] 
       @film
     end

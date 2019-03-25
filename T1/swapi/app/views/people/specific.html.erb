@@ -8,9 +8,15 @@
     <p>Eye color: <%= @person["eye_color"] %></p>
     <p>Birth year: <%= @person["birth_year"] %></p>
     <p>Gender: <%= @person["gender"] %></p>
-    <p>Homeworld: <%= @person["homeworld"] %></p>
-    <p>Films: <%= @person["films"] %></p>
-    <p>Starships: <%= @person["starships"] %></p>
+    <p>Homeworld: <%= link_to @person["homeworld"]["name"], planet_specific_path(url: @person["homeworld"]["url"])%></p>
+    <p>Films:</p>
+    <% @person["films"].each do |person| %>
+      <p><%= link_to person["title"], film_specific_path(url: person["url"])%></p>
+    <% end %>
+    <p>Starships:</p>
+    <% @person["starships"].each do |person| %>
+      <p><%= link_to person["name"], starship_specific_path(url: person["url"])%></p>
+    <% end %>
   </tbody>
 </table>
 

@@ -9,8 +9,14 @@
       <p>Terrain: <%= @planet["terrain"] %></p>
       <p>Surface water: <%= @planet["surface_water"] %></p>
       <p>Population: <%= @planet["population"] %></p>
-      <p>Residents: <%= @planet["residents"] %></p>
-      <p>Films: <%= @planet["films"] %></p>
+      <p>Residents:</p>
+      <% @planet["residents"].each do |person| %>
+        <p><%= link_to person["name"], people_specific_path(url: person["url"])%></p>
+      <% end %>
+      <p>Films:</p>
+      <% @planet["films"].each do |person| %>
+        <p><%= link_to person["title"], film_specific_path(url: person["url"])%></p>
+      <% end %>
 </tbody>
 
 </table>

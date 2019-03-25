@@ -52,8 +52,24 @@ class StarshipController < ApplicationController
       @starship["hyperdrive_rating"] = response["hyperdrive_rating"] 
       @starship["MGLT"] = response["MGLT"]
       @starship["starship_class"] = response["starship_class"]
-      @starship["pilots"] = response["pilots"]
-      @starship["films"] = response["films"]
+      pilots_urls = response["pilots"]
+      pilots = []
+      pilots_urls.each do |url|
+        char = Hash.new
+        char["name"] = (HTTParty.get(url))["name"]
+        char["url"] = url
+        pilots.push(char)
+      end
+      @starship["pilots"] = pilots
+      films_urls = response["films"]
+      films = []
+      films_urls.each do |url|
+        char = Hash.new
+        char["title"] = (HTTParty.get(url))["title"]
+        char["url"] = url
+        films.push(char)
+      end
+      @starship["films"] = films
       @starship["url"] = response["url"]
       @starship
     end
