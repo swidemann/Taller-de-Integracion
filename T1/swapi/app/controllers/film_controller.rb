@@ -37,6 +37,9 @@ class FilmController < ApplicationController
       @film["director"] = response["director"] 
       @film["producer"] = response["producer"] 
       @film["release_date"] = response["release_date"] 
+      @film["characters"] = response["characters"] 
+      @film["planets"] = response["planets"] 
+      @film["starships"] = response["starships"] 
       @film["url"] = response["url"] 
       @film
     end

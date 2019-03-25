@@ -41,7 +41,7 @@ class PeopleController < ApplicationController
       @person["mass"] = response["mass"] 
       @person["hair_color"] = response["hair_color"] 
       @person["skin_color"] = response["skin_color"] 
-      @person["eyes_color"] = response["eyes_color"] 
+      @person["eye_color"] = response["eye_color"] 
       @person["birth_year"] = response["birth_year"] 
       @person["gender"] = response["gender"] 
       @person["homeworld"] = response["homeworld"] 
