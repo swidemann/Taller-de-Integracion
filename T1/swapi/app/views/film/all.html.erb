@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Title &nbsp; &nbsp; &nbsp;</th>
+    <th>Release date</th>
+    <th>Director</th>
+    <th>Producer</th>
+    <th>Episode id</th>
+  </tr>
+
+  <tbody>
+    <% @films.each do |f| %>
+      <tr>
+        <td><%= link_to f["name"], film_specific_path(url: f["url"])%></td>
+        <td><%= f["release_date"] %></td>
+        <td><%= f["director"] %></td>
+        <td><%= f["producer"] %></td>
+        <td><%= f["episode_id"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</table>

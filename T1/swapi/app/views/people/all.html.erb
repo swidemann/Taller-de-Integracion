@@ -1,0 +1,35 @@
+<table>
+  <tr>
+    <th>Name &nbsp; &nbsp; &nbsp;</th>
+    <th>Height</th>
+    <th>Mass</th>
+    <th>Hair color</th>
+    <th>Skin color</th>
+    <th>Eyes color</th>
+    <th>Birth year</th>
+    <th>Gender</th>
+    <th>Homeworld</th>
+    <th>Films</th>
+    <th>Starships</th>
+  </tr>
+
+  <tbody>
+    <% @people.each do |p| %>
+      <tr>
+        <td><%= link_to p["name"], people_specific_path(url: p["url"])%></td>
+        <td><%= p["height"] %></td>
+        <td><%= p["mass"] %></td>
+        <td><%= p["hair_color"] %></td>
+        <td><%= p["skin_color"] %></td>
+        <td><%= p["eyes_color"] %></td>
+        <td><%= p["birth_year"] %></td>
+        <td><%= p["gender"] %></td>
+        <td><%= p["homeworld"] %></td>
+        <td><%= p["films"] %></td>
+        <td><%= p["starships"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</table>

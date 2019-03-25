@@ -1,0 +1,2 @@
+module SpaceshipHelper
+end

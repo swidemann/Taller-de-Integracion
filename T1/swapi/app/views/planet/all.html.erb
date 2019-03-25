@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th>Name &nbsp; &nbsp; &nbsp;</th>
+    <th>Rotation period</th>
+    <th>Orbital period</th>
+    <th>Diameter</th>
+    <th>Climate</th>
+    <th>Gravity</th>
+    <th>Terrain</th>
+    <th>Surface water</th>
+    <th>Population</th>
+    <th>Residents</th>
+    <th>Films</th>
+  </tr>
+
+  <tbody>
+  <% @planets.each do |p| %>
+    <tr>
+      <td><%= link_to p["name"], planet_specific_path(url: p["url"])%></td>
+      <td><%= p["rotation_period"] %></td>
+      <td><%= p["orbital_period"] %></td>
+      <td><%= p["diameter"] %></td>
+      <td><%= p["climate"] %></td>
+      <td><%= p["gravity"] %></td>
+      <td><%= p["terrain"] %></td>
+      <td><%= p["surface_water"] %></td>
+      <td><%= p["population"] %></td>
+      <td><%= p["residents"] %></td>
+      <td><%= p["films"] %></td>
+    </tr>
+  <% end %>
+</tbody>
+
+</table>

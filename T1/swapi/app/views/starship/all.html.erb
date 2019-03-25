@@ -1,0 +1,42 @@
+<table>
+  <tr>
+    <th>Name&nbsp; &nbsp; &nbsp;</th>
+    <th>Model</th>
+    <th>Manufacturer</th>
+    <th>Cost in credits</th>
+    <th>Length</th>
+    <th>Max atmosphering speed</th>
+    <th>Crew</th>
+    <th>Passengers</th>
+    <th>Cargo capacity</th>
+    <th>Consumables</th>
+    <th>Hyperdrive rating</th>
+    <th>MGLT</th>
+    <th>Starship class</th>
+    <th>Pilots</th>
+    <th>Films</th>
+  </tr>
+
+  <tbody>
+  <% @starships.each do |s| %>
+    <tr>
+      <td><%= link_to s["name"], starship_specific_path(url: s["url"])%></td>
+      <td><%= s["model"] %></td>
+      <td><%= s["manufacturer"] %></td>
+      <td><%= s["cost_in_credits"] %></td>
+      <td><%= s["length"] %></td>
+      <td><%= s["max_atmosphering_speed"] %></td>
+      <td><%= s["crew"] %></td>
+      <td><%= s["passengers"] %></td>
+      <td><%= s["cargo_capacity"] %></td>
+      <td><%= s["consumables"] %></td>
+      <td><%= s["hyperdrive_rating"] %></td>
+      <td><%= s["MGLT"] %></td>
+      <td><%= s["starship_class"] %></td>
+      <td><%= s["pilots"] %></td>
+      <td><%= s["films"] %></td>
+    </tr>
+  <% end %>
+</tbody>
+
+</table>
